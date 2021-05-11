@@ -18,6 +18,6 @@ newcameramtx = mtx.copy()
 mapx, mapy = cv2.initUndistortRectifyMap(mtx, dist, np.eye(3), newcameramtx, img_size, 5)
 
 # undistortion
-# img = cv2.remap(img, mapx, mapy, cv2.INTER_LINEAR)
-img = cv2.undistort(img, mtx, dist, None, newcameramtx) # no use
+img = cv2.remap(img, mapx, mapy, cv2.INTER_LINEAR)
+# img = cv2.undistort(img, mtx, dist, None, newcameramtx) # alternative
 cv2.imwrite(out, img)
